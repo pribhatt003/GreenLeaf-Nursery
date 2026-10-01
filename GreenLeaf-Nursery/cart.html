@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Shopping Cart | GreenLeaf Nursery</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+
+    <!-- Bootstrap Icons -->
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    >
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+
+<body>
+
+
+<!-- ========================================
+     NAVBAR
+======================================== -->
+
+<nav class="navbar navbar-expand-lg navbar-dark shadow sticky-top"
+     style="background:#1B4332;">
+
+    <div class="container">
+
+        <!-- Logo -->
+
+        <a class="navbar-brand d-flex align-items-center"
+           href="index.html">
+
+            <img
+                src="images/logo.png"
+                width="50"
+                height="50"
+                class="me-2"
+                alt="GreenLeaf Nursery Logo"
+            >
+
+            <span class="fw-bold fs-4">
+                GreenLeaf Nursery
+            </span>
+
+        </a>
+
+
+        <!-- Mobile Button -->
+
+        <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbar"
+        >
+
+            <span class="navbar-toggler-icon"></span>
+
+        </button>
+
+
+        <!-- Navigation -->
+
+        <div class="collapse navbar-collapse" id="navbar">
+
+            <ul class="navbar-nav ms-auto">
+
+                <li class="nav-item">
+
+                    <a class="nav-link"
+                       href="index.html">
+
+                        Home
+
+                    </a>
+
+                </li>
+
+
+                <li class="nav-item">
+
+                    <a class="nav-link"
+                       href="shop.html">
+
+                        Shop
+
+                    </a>
+
+                </li>
+
+
+                <li class="nav-item">
+
+                    <a class="nav-link"
+                       href="about.html">
+
+                        About
+
+                    </a>
+
+                </li>
+
+
+                <li class="nav-item">
+
+                    <a class="nav-link"
+                       href="contact.html">
+
+                        Contact
+
+                    </a>
+
+                </li>
+
+
+                <li class="nav-item">
+
+                    <a class="nav-link active"
+                       href="cart.html">
+
+                        <i class="bi bi-cart-fill"></i>
+
+                        Cart
+
+                    </a>
+
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</nav>
+
+
+<!-- ========================================
+     CART HERO
+======================================== -->
+
+<section class="cart-hero">
+
+    <div class="container text-center">
+
+        <h1 class="main-page-heading" style="color: white !important;">
+            Your Shopping Cart 🛒
+        </h1>
+
+        <p>
+            Review your plants before checkout.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ========================================
+     CART SECTION
+======================================== -->
+
+<section class="py-5">
+
+    <div class="container">
+
+        <div class="row g-4">
+
+
+            <!-- ==================================
+                 CART PRODUCTS
+            ================================== -->
+
+            <div class="col-lg-8">
+
+                <div class="cart-box">
+
+                    <div class="d-flex justify-content-between
+                                align-items-center mb-4">
+
+                        <h3 class="fw-bold mb-0">
+                            Cart Items
+                        </h3>
+
+                        <span
+                            id="cartItemCount"
+                            class="badge bg-success"
+                        >
+                            0 Items
+                        </span>
+
+                    </div>
+
+
+                    <!-- Products will appear here -->
+
+                    <div id="cartItems">
+
+                    </div>
+
+
+                    <!-- Empty Cart -->
+
+                    <div
+                        id="emptyCart"
+                        class="text-center py-5"
+                    >
+
+                        <div class="empty-cart-icon">
+
+                            <i class="bi bi-cart-x"></i>
+
+                        </div>
+
+                        <h4 class="fw-bold mt-3">
+                            Your cart is empty
+                        </h4>
+
+                        <p class="text-muted">
+                            Looks like you haven't added
+                            any plants yet.
+                        </p>
+
+                        <a
+                            href="shop.html"
+                            class="btn btn-success px-4"
+                        >
+
+                            <i class="bi bi-shop me-2"></i>
+
+                            Continue Shopping
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ==================================
+                 ORDER SUMMARY
+            ================================== -->
+
+            <div class="col-lg-4">
+
+                <div class="order-summary">
+
+                    <h3 class="fw-bold mb-4">
+                        Order Summary
+                    </h3>
+
+
+                    <div class="summary-row">
+
+                        <span>
+                            Subtotal
+                        </span>
+
+                        <strong id="cartSubtotal">
+                            ₹0
+                        </strong>
+
+                    </div>
+
+
+                    <div class="summary-row">
+
+                        <span>
+                            Delivery
+                        </span>
+
+                        <strong>
+                            Free
+                        </strong>
+
+                    </div>
+
+
+                    <hr>
+
+
+                    <div class="summary-total">
+
+                        <span>
+                            Total
+                        </span>
+
+                        <strong id="cartTotal">
+                            ₹0
+                        </strong>
+
+                    </div>
+
+
+                    <button
+                        id="checkoutBtn"
+                        class="btn btn-success w-100 mt-4 py-3"
+                    >
+
+                        <i class="bi bi-credit-card me-2"></i>
+
+                        Proceed To Checkout
+
+                    </button>
+
+
+                    <a
+                        href="shop.html"
+                        class="btn btn-outline-success w-100 mt-2"
+                    >
+
+                        Continue Shopping
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ========================================
+     FOOTER
+======================================== -->
+
+<footer class="bg-dark text-white pt-5 pb-3">
+
+    <div class="container">
+
+        <div class="row g-4">
+
+
+            <div class="col-md-4">
+
+                <h3>
+                    🌿 GreenLeaf Nursery
+                </h3>
+
+                <p class="text-white-50">
+                    Healthy plants for a greener home.
+                </p>
+
+            </div>
+
+
+            <div class="col-md-4">
+
+                <h5>
+                    Quick Links
+                </h5>
+
+                <p>
+                    <a
+                        href="index.html"
+                        class="text-white text-decoration-none"
+                    >
+                        Home
+                    </a>
+                </p>
+
+                <p>
+                    <a
+                        href="shop.html"
+                        class="text-white text-decoration-none"
+                    >
+                        Shop
+                    </a>
+                </p>
+
+                <p>
+                    <a
+                        href="about.html"
+                        class="text-white text-decoration-none"
+                    >
+                        About
+                    </a>
+                </p>
+
+                <p>
+                    <a
+                        href="contact.html"
+                        class="text-white text-decoration-none"
+                    >
+                        Contact
+                    </a>
+                </p>
+
+            </div>
+
+
+            <div class="col-md-4">
+
+                <h5>
+                    Contact
+                </h5>
+
+                <p>
+                    📞 +91 8699157931
+                </p>
+
+                <p>
+                    📧 greenleaf@gmail.com
+                </p>
+
+                <p>
+                    📍 Jalandhar, Punjab
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <hr>
+
+
+        <div class="text-center">
+
+            <p class="mb-1">
+                © 2026 GreenLeaf Nursery |
+                All Rights Reserved
+            </p>
+
+            <small class="text-white-50">
+                Developed By Priyanshu Bhatt |
+                Internship Project 2026
+            </small>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<!-- Bootstrap JS -->
+
+<script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+</script>
+
+
+<!-- Cart JavaScript -->
+
+<script src="js/cart.js"></script>
+
+
+</body>
+
+</html>

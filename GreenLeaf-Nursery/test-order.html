@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Order</title>
+</head>
+<body>
+
+<h2>Testing Order API...</h2>
+
+<script>
+
+fetch("backend/api/orders.php", {
+    method: "POST",
+    headers: {
+        "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+        customer_name: "Test Customer",
+        email: "test@example.com",
+        phone: "9876543210",
+        address: "Amritsar, Punjab",
+        total_amount: 598,
+        items: [
+            {
+                product_id: 1,
+                product_name: "Snake Plant",
+                price: 299,
+                quantity: 2
+            }
+        ]
+    })
+})
+.then(function(response) {
+    return response.json();
+})
+.then(function(data) {
+    console.log(data);
+    alert(JSON.stringify(data));
+})
+.catch(function(error) {
+    console.error(error);
+    alert("Error occurred");
+});
+
+</script>
+
+</body>
+</html>
